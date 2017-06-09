@@ -31,9 +31,9 @@ class UploadController extends Controller
 		$client->setAuthConfig(CLIENT_SECRET_PATH);
 		$client->setAccessType('offline');
 		$authUrl = $client->createAuthUrl();
-		$accessToken = env('GOOGLE_DRIVE_ACCESS_TOKEN');
+		//$accessToken = env('GOOGLE_DRIVE_ACCESS_TOKEN');
 		$refreshToken = env('GOOGLE_DRIVE_REFRESH_TOKEN');
-		$client->setAccessToken($accessToken);
+		//$client->setAccessToken($accessToken);
 		$client->fetchAccessTokenWithRefreshToken($refreshToken);
 		$client->getAccessToken();
 		return $client;
